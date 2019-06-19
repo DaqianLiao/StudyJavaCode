@@ -9,10 +9,9 @@ import java.util.*;
  * 而低配置、高负载的机器，则给其分配较低的权重，降低其系统负载
  */
 public class WeightRoundRobinSelect {
-    private static Integer pos;
+    private static Integer pos = 0;
 
-    public static String getServer()
-    {
+    public static String getServer() {
         // 重建一个Map，避免服务器的上下线导致的并发问题
         Map<String, Integer> serverMap = new HashMap<>();
         serverMap.putAll(BalanceData.serverWeightMap);
@@ -27,12 +26,12 @@ public class WeightRoundRobinSelect {
          * 会涉及到arrayList数组扩容的问题，损失一定的性能
          */
         List<String> serverList = new ArrayList<>();
-        while (iterator.hasNext())
-        {
+        while (iterator.hasNext()) {
             String server = iterator.next();
             int weight = serverMap.get(server);
-            for (int i = 0; i < weight; i++)
+            for (int i = 0; i < weight; i++) {
                 serverList.add(server);
+            }
         }
 
         String server = null;
@@ -41,12 +40,12 @@ public class WeightRoundRobinSelect {
          * 使得同一时刻只能有一个线程可以修改pos的值，否则当pos变量被并发修改，
          * 则无法保证服务器选择的顺序性，甚至有可能导致keyList数组越界。
          */
-        synchronized (pos)
-        {
-            if (pos > keySet.size())
+        synchronized (pos) {
+            if (pos > keySet.size()) {
                 pos = 0;
+            }
             server = serverList.get(pos);
-            pos ++;
+            pos++;
         }
 
         return server;

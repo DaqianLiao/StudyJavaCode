@@ -26,8 +26,9 @@ public class WeightRandomSelect {
         while (iterator.hasNext()) {
             String server = iterator.next();
             int weight = serverMap.get(server);
-            for (int i = 0; i < weight; i++)
+            for (int i = 0; i < weight; i++) {
                 serverList.add(server);
+            }
         }
 
         Random random = new Random();
@@ -35,4 +36,5 @@ public class WeightRandomSelect {
 
         return serverList.get(randomPos);
     }
+
 }
