@@ -5,11 +5,11 @@ import java.util.concurrent.Callable;
 public class FutureCallable implements Callable<String> {
     @Override
     public String call() throws Exception {
-//       return catchExcetion();
+//       return catchException();
         return throwException();
     }
 
-    private String catchExcetion() throws Exception {
+    private String catchException() throws Exception {
         String done = "init";
         int index = 1;
 
