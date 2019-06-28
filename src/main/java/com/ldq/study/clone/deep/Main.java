@@ -28,7 +28,29 @@ public class Main {
         System.out.println(c2.toString());
     }
 
-    public static void main(String[] args) {
+    public static void testSerialize() throws Exception {
+        AddressSerial address = new AddressSerial("China", "guangdong", "shenzhen");
+        CustomerSerial c1 = new CustomerSerial("Lily", address);
+        CustomerSerial c2 = c1.deepclone();
+        System.out.println(c1.toString());
+        System.out.println(c2.toString());
+
+//        修改普通成员变量的值，只改变自身
+        System.out.println("====================");
+        c2.setName("jack");
+        System.out.println(c2.toString());
+
+//        修改引用对象值，只改变自身，说明深克隆
+        System.out.println("====================");
+        c2.getAddress().setCity("guangzhou");
+        System.out.println(c1.toString());
+        System.out.println(c2.toString());
+    }
+
+    public static void main(String[] args) throws Exception {
+
         testClone();
+        System.out.println("deep clone by serializable");
+        testSerialize();
     }
 }

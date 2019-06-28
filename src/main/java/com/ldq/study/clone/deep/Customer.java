@@ -1,8 +1,6 @@
 package com.ldq.study.clone.deep;
 
 
-import com.ldq.study.clone.deep.Address;
-
 public class Customer implements Cloneable {
     private String name;
     private Address address;
