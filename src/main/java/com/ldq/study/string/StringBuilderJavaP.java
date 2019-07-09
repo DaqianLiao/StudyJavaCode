@@ -1,4 +1,4 @@
-package com.ldq.study.String;
+package com.ldq.study.string;
 
 public class StringBuilderJavaP {
 
