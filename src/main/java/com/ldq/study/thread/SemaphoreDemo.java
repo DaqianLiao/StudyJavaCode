@@ -48,6 +48,24 @@ public class SemaphoreDemo {
         }
     }
 
+    /**
+     * Semaphore(int permits):构造方法，创建具有给定许可数的计数信号量并设置为非公平信号量。
+     *
+     * Semaphore(int permits,boolean fair):构造方法，当fair等于true时，创建具有给定许可数的计数信号量并设置为公平信号量。
+     *
+     * void acquire():从此信号量获取一个许可前线程将一直阻塞。相当于一辆车占了一个车位。
+     *
+     * void acquire(int n):从此信号量获取给定数目许可，在提供这些许可前一直将线程阻塞。比如n=2，就相当于一辆车占了两个车位。
+     *
+     * void release():释放一个许可，将其返回给信号量。就如同车开走返回一个车位。
+     *
+     * void release(int n):释放n个许可。
+     *
+     * int availablePermits()：当前可用的许可数。
+     *
+     * @param args
+     */
+
     public static void main(String[] args) {
         String[] name = {"李明", "王五", "张杰", "王强", "赵二", "李四", "张三"};
         int[] age = {26, 27, 33, 45, 19, 23, 41};
