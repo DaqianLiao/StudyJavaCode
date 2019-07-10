@@ -9,8 +9,10 @@ import java.util.concurrent.Executors;
 
 /**
  * threadlocal 使用实验
+ * 使用场景：
+ *     当线程中需要独立使用到变量的时候，不受多个线程相互影响
  */
-public class TLocal {
+public class ThreadLocalDemo {
     private static ThreadLocal<Integer> numLocal = new ThreadLocal<>();
 
     /**
