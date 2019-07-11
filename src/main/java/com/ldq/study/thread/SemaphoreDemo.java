@@ -73,6 +73,7 @@ public class SemaphoreDemo {
             Thread t1 = new InformationThread(name[i], age[i]);
             threadPool.execute(t1);
         }
+        threadPool.shutdown();
     }
 
 }
