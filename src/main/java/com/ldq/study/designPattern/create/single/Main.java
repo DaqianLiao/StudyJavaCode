@@ -1,5 +1,8 @@
 package com.ldq.study.designPattern.create.single;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Main {
     public static void testHungry() {
         HungrySingle h1 = HungrySingle.getInstance();
@@ -111,6 +114,33 @@ public class Main {
         System.out.println(e1 == e2);
     }
 
+    /**
+     * 通过程序串行的方式执行
+     */
+    public static void testCasSingleThread(){
+        CasSingle single1 = CasSingle.getInstance();
+        CasSingle single2 = CasSingle.getInstance();
+        CasSingle single3 = CasSingle.getInstance();
+        System.out.println(single1 == single2);
+        System.out.println(single1 == single3);
+        System.out.println("final single hashcode = " + single1.hashCode());
+    }
+
+    /**
+     * 模拟高并发下，cas 这种方式下的缺点
+     * 多运行几次，就可以看到会生成多个临时变量
+     */
+    public static void testMultiThreadCasSingle(){
+        int num = 1000;
+        ExecutorService pool = Executors.newFixedThreadPool(num);
+        for (int i = 0; i < num; i++) {
+            pool.execute(()->{
+                CasSingle single = CasSingle.getInstance();
+                System.out.println("final single hashcode = " + single.hashCode());
+            });
+        }
+        pool.shutdown();
+    }
     public static void main(String[] args) {
 //        testLazy();
 //        testHungry();
@@ -119,6 +149,10 @@ public class Main {
 //        testLockObject();
 //        testCheckLockObject();
 //        testDoubleCheck();
-        testStaticInner();
+//        testStaticInner();
+//        testCasSingleThread();
+
+     testMultiThreadCasSingle();
     }
+
 }
