@@ -34,8 +34,49 @@ public class Main {
         readObject(path);
     }
 
+    /**
+     * 静态字段属于类属性，不属于对象属性，
+     * 对静态字段修改，反序列化对象，同时会变更静态字段的值
+     * 有类加载器决定
+     */
+    public static void testStaticField() {
+        StaticFieldPerson person = new StaticFieldPerson();
+        person.setName("static");
+        System.out.println("init StaticFieldPerson = " + person);
+
+        String path = "data/serializable/StaticFieldPerson.txt";
+
+        writeObject(person, path);
+
+        //第一次读到的对象中，age是18
+        System.out.println("第一次读取的反序列化的值：");
+        readObject(path);
+        //修改了原始Person数据
+        //由于age是静态变量，属于类的状态，当对象反序列化的时候，
+        // 由类加载器加载静态变量的值，所有反序列化对象会加载静态值
+        person.setAge(10);
+        //修改名字属性，对序列化后的对象无影响
+        person.setName("modify");
+        System.out.println("修改原始变量的静态成员和非静态成员值对比");
+        System.out.println("modify person = " + person);
+        readObject(path);
+    }
+
+    public static void testTransientField() {
+        TransientFieldPerson person = new TransientFieldPerson();
+        person.setName("transient");
+        person.setAddress("china");
+        System.out.println("init TransientFieldPerson = " + person);
+
+        String path = "data/serializable/TransientFieldPerson.txt";
+
+        writeObject(person, path);
+        readObject(path);
+    }
+
     public static void writeObject(Object object, String path) {
         // 把对象写到文件中
+        System.out.println("source hashcode = " + object.hashCode());
         try (ObjectOutputStream oos = new ObjectOutputStream(
                 new FileOutputStream(path))) {
             //从这一行进入，查看源码执行逻辑
@@ -51,6 +92,7 @@ public class Main {
                 new FileInputStream(new File(path)))) {
             Object read = ois.readObject();
             System.out.println("read from file! object = " + read);
+            System.out.println("object hashcode = " + read.hashCode());
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -66,5 +108,11 @@ public class Main {
 
         System.out.println("=======================");
         testSerializable();
+
+        System.out.println("=======================");
+        testStaticField();
+
+        System.out.println("=======================");
+        testTransientField();
     }
 }
