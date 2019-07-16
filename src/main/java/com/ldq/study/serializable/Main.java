@@ -62,6 +62,10 @@ public class Main {
         readObject(path);
     }
 
+
+    /**
+     * transient 修饰的字段，反序列化后为类型的默认值
+     */
     public static void testTransientField() {
         TransientFieldPerson person = new TransientFieldPerson();
         person.setName("transient");
@@ -73,6 +77,22 @@ public class Main {
         writeObject(person, path);
         readObject(path);
     }
+
+    /**
+     * 实现Externalizable 接口
+     * 需要重写接口方法
+     */
+    public static void testExternalizable() {
+        ExternalizePerson person = new ExternalizePerson();
+        person.setName("External");
+        person.setAge(18);
+        System.out.println("init ExternalizePerson = " + person);
+
+        String path = "data/serializable/ExternalizePerson.txt";
+        writeObject(person, path);
+        readObject(path);
+    }
+
 
     public static void writeObject(Object object, String path) {
         // 把对象写到文件中
@@ -114,5 +134,8 @@ public class Main {
 
         System.out.println("=======================");
         testTransientField();
+
+        System.out.println("=======================");
+        testExternalizable();
     }
 }
