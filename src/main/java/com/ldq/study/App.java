@@ -1,7 +1,5 @@
 package com.ldq.study;
 
-import java.util.concurrent.LinkedBlockingDeque;
-
 /**
  * Hello world!
  */
