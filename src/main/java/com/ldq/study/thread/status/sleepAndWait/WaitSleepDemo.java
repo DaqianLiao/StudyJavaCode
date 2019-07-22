@@ -1,4 +1,4 @@
-package com.ldq.study.thread.sleepAndWait;
+package com.ldq.study.thread.status.sleepAndWait;
 
 import java.util.concurrent.TimeUnit;
 
