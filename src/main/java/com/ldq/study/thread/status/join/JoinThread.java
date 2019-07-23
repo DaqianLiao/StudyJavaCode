@@ -1,4 +1,4 @@
-package com.ldq.study.thread;
+package com.ldq.study.thread.status.join;
 
 public class JoinThread {
     public static void main(String[] args) throws InterruptedException {

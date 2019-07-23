@@ -1,4 +1,4 @@
-package com.ldq.study.thread;
+package com.ldq.study.thread.tool;
 
 import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
