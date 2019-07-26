@@ -1,4 +1,4 @@
-package com.ldq.study.exception;
+package com.ldq.study.gc.exception;
 
 import java.util.Random;
 
