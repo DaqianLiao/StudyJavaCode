@@ -9,11 +9,18 @@ import java.util.List;
 
 public class StropWords {
 
-    public static List<String> getStopWords(String path ){
+    public static List<String> getStopWords(String path) {
+        return getStopWords(path, true);
+    }
+
+
+    public static List<String> getStopWords(String path, boolean isPrint) {
         List<String> stopWords = new ArrayList<>();
         try {
             stopWords = FileUtils.readLines(new File(path));
-            System.out.println(stopWords.toString());
+            if (isPrint) {
+                System.out.println(stopWords.toString());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
