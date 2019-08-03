@@ -1,4 +1,4 @@
-package com.ldq.study.algorithm.find;
+package com.ldq.study.algorithm.find.base;
 
 public class BinaryFind {
 
@@ -91,6 +91,41 @@ public class BinaryFind {
         }
 
         return index;
+    }
+
+    /**
+     * 递归版本的二分查找
+     * @param array
+     * @param left
+     * @param right
+     * @param target
+     * @return
+     */
+    public static int binaryWithRecursion(int[] array, int left, int right, int target) {
+
+        if (left > right) {
+            return -1;
+        }
+
+        int middle = left + ((right - left) >>> 1);
+        if (target > array[middle]) {
+            return binaryWithRecursion(array, middle + 1, right, target);
+        } else if (target < array[middle]) {
+            return binaryWithRecursion(array, left, middle - 1, target);
+        } else {
+            return middle;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,3,4,5,6,7,8,9,10};
+
+        int target=10;
+        System.out.println(binaryNormal(nums, target));
+        System.out.println(binaryFixBug(nums, target));
+        System.out.println(binaryWithCool(nums, target));
+        System.out.println(binaryWithRecursion(nums,0,nums.length-1,target));
     }
 
 }
