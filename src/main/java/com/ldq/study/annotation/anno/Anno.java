@@ -8,7 +8,7 @@ public class Anno {
 
     @Test
     public void getNoAnnotation() throws ClassNotFoundException {
-        String person = "com.ldq.study.annotation.base.Person";
+        String person = "com.ldq.study.annotation.entity.Person";
         Class<?> aClass = Class.forName(person);
         Annotation[] annotations = aClass.getAnnotations();
         System.out.println("annotation size = " + annotations.length);
@@ -19,7 +19,7 @@ public class Anno {
     
     @Test
     public void getAnnotation() throws ClassNotFoundException {
-        String person = "com.ldq.study.annotation.base.Child";
+        String person = "com.ldq.study.annotation.entity.Child";
         Class<?> aClass = Class.forName(person);
         Annotation[] annotations = aClass.getAnnotations();
         System.out.println("annotation size = " + annotations.length);

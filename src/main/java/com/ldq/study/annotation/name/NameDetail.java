@@ -1,6 +1,6 @@
 package com.ldq.study.annotation.name;
 
-import com.ldq.study.annotation.base.Person;
+import com.ldq.study.annotation.entity.Person;
 import org.junit.Test;
 
 /**
@@ -48,8 +48,8 @@ public class NameDetail {
     public void getClassName() {
         try {
             // 方法1：Class.forName("类名字符串")  （注意：类名字符串必须是全称，包名+类名）
-            Class<?> cls1 = Class.forName("com.ldq.study.annotation.base.Person");
-            //Class<Person> cls1 = Class.forName("com.ldq.study.annotation.base.Person");
+            Class<?> cls1 = Class.forName("com.ldq.study.annotation.entity.Person");
+            //Class<Person> cls1 = Class.forName("com.ldq.study.annotation.entity.Person");
 
             // 方法2：类名.class
             Class cls2 = Person.class;
@@ -59,7 +59,7 @@ public class NameDetail {
             Class cls3 = person.getClass();
 
             // 方法4："类名字符串".getClass()
-            String str = "com.ldq.study.annotation.base.Person";
+            String str = "com.ldq.study.annotation.entity.Person";
             Class cls4 = str.getClass();
 
             System.out.printf(" cls1=%s,\n cls2=%s,\n cls3=%s,\n cls4=%s\n", cls1, cls2, cls3, cls4);

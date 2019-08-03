@@ -23,7 +23,7 @@ public class ParseAnnotation {
     public static void main(String[] args) {
         //1 使用类加载器
         try {
-            Class aClass = Class.forName("com.ldq.study.annotation.base.Child");
+            Class aClass = Class.forName("com.ldq.study.annotation.entity.Child");
 
             //2 找到类上面的注解
             boolean isClassAnnotation = aClass.isAnnotationPresent(Description.class);

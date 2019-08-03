@@ -1,4 +1,4 @@
-package com.ldq.study.annotation.base;
+package com.ldq.study.annotation.entity;
 
 
 public class Person {
