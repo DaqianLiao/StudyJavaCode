@@ -1,11 +1,11 @@
-package com.ldq.study.annotation.entity;
+package com.ldq.study.reflexAndAnnotation.entity;
 
-import com.ldq.study.annotation.anno.Description;
+import com.ldq.study.reflexAndAnnotation.anno.Description;
 
 /**
  * Created by diligent_leo on 2016/12/23
  */
-@Description(desv = "asd", author = "diligent_leo", value = "I am class annotation")
+@Description(desv = "asd", author = "diligent_leo", value = "I am class reflexAndAnnotation")
 public class Child {
     private String name;
     private int age;

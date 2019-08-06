@@ -1,4 +1,4 @@
-package com.ldq.study.annotation.other;
+package com.ldq.study.reflexAndAnnotation.reflex;
 
 import java.lang.annotation.ElementType;
 

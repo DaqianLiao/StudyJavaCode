@@ -1,8 +1,7 @@
-package com.ldq.study.annotation.field;
+package com.ldq.study.reflexAndAnnotation.reflex;
 
-import com.ldq.study.annotation.entity.FieldPerson;
-import com.ldq.study.annotation.entity.Gender;
-import com.ldq.study.gc.exception.Ex;
+import com.ldq.study.reflexAndAnnotation.entity.FieldPerson;
+import com.ldq.study.reflexAndAnnotation.entity.Gender;
 import org.junit.Test;
 
 import java.lang.reflect.Field;
@@ -80,6 +79,7 @@ public class FieldDetail {
 
             // 根据构造函数，创建相应的对象
             fName.set(person, "Grace");
+            System.out.println(fName.get(person));
             //fAge.set(person, 26);
             //fGender.set(person, Gender.FEMALE);
 

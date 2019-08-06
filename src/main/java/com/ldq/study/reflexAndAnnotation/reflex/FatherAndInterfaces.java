@@ -1,7 +1,7 @@
-package com.ldq.study.annotation.other;
+package com.ldq.study.reflexAndAnnotation.reflex;
 
-import com.ldq.study.annotation.entity.ConstrPerson;
-import com.ldq.study.annotation.entity.InterfacesPerson;
+import com.ldq.study.reflexAndAnnotation.entity.ConstrPerson;
+import com.ldq.study.reflexAndAnnotation.entity.InterfacesPerson;
 import org.junit.Test;
 
 import java.lang.reflect.Type;

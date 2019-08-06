@@ -1,4 +1,4 @@
-package com.ldq.study.annotation.entity;
+package com.ldq.study.reflexAndAnnotation.entity;
 
 import java.lang.reflect.Constructor;
 

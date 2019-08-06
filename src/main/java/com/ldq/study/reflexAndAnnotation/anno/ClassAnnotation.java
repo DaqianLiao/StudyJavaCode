@@ -1,14 +1,12 @@
-package com.ldq.study.annotation.packageInfo;
+package com.ldq.study.reflexAndAnnotation.anno;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * 定义只能标注在package上的注解
- */
-@Target(ElementType.PACKAGE)
+@Target(value = ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface PkgAnnotation {
+public @interface ClassAnnotation {
+    int age() default 18;
 }

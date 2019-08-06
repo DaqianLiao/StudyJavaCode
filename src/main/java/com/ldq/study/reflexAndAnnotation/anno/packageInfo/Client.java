@@ -1,11 +1,11 @@
-package com.ldq.study.annotation.packageInfo;
+package com.ldq.study.reflexAndAnnotation.anno.packageInfo;
 
 import java.lang.annotation.Annotation;
 
 public class Client {
     public static void main(String[] args) {
         //可以通过I/O操作或配置项获得包名
-        String pkgName = "com.ldq.study.annotation.packageInfo";
+        String pkgName = "com.ldq.study.reflexAndAnnotation.anno.packageInfo";
         //获取包对象
         Package pkg = Package.getPackage(pkgName);
         //获得包上的注解

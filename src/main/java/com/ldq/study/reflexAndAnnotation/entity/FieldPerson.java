@@ -1,4 +1,4 @@
-package com.ldq.study.annotation.entity;
+package com.ldq.study.reflexAndAnnotation.entity;
 
 public class FieldPerson {
     // private。性别

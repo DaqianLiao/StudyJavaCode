@@ -1,4 +1,4 @@
-package com.ldq.study.annotation.anno;
+package com.ldq.study.reflexAndAnnotation.anno;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -12,7 +12,7 @@ public class ParseAnnotation {
      * 　取值(ElementType)有：
      *
      * 　　　　1.CONSTRUCTOR:用于描述构造器
-     * 　　　　2.FIELD:用于描述域
+     * 　　　　2.FIELD:用于描述字段
      * 　　　　3.LOCAL_VARIABLE:用于描述局部变量
      * 　　　　4.METHOD:用于描述方法
      * 　　　　5.PACKAGE:用于描述包
@@ -29,7 +29,7 @@ public class ParseAnnotation {
     public static void main(String[] args) {
         //1 使用类加载器
         try {
-            Class aClass = Class.forName("com.ldq.study.annotation.entity.Child");
+            Class aClass = Class.forName("com.ldq.study.reflexAndAnnotation.entity.Child");
 
             //2 找到类上面的注解
             boolean isClassAnnotation = aClass.isAnnotationPresent(Description.class);

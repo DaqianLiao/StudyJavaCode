@@ -1,4 +1,4 @@
-package com.ldq.study.annotation.anno;
+package com.ldq.study.reflexAndAnnotation.anno;
 
 import java.lang.annotation.*;
 

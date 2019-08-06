@@ -8,7 +8,7 @@
  * 3、提供包的整体注释说明。<br>
  */
 @PkgAnnotation
-package com.ldq.study.annotation.packageInfo;
+package com.ldq.study.reflexAndAnnotation.anno.packageInfo;
 
 //这里是包类，声明一个包使用的公共类，强调的是包访问权限
 class PkgClass {

@@ -1,13 +1,13 @@
-package com.ldq.study.annotation.method;
+package com.ldq.study.reflexAndAnnotation.reflex;
 
-import com.ldq.study.annotation.entity.Person;
+import com.ldq.study.reflexAndAnnotation.entity.Person;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
 
-public class ReflexMethodDetail {
+public class ReflexMethodAnnotationDetail {
     public static void main(String[] args) throws ClassNotFoundException {
-        String name = "com.ldq.study.annotation.entity.Person";
+        String name = "com.ldq.study.reflexAndAnnotation.entity.Person";
         Class<?> aClass = Class.forName(name);
         //获取类的全限定名
         System.out.println("aClass.getName() = " + aClass.getName());

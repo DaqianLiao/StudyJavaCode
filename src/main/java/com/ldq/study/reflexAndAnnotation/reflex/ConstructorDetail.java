@@ -1,7 +1,7 @@
-package com.ldq.study.annotation.constructor;
+package com.ldq.study.reflexAndAnnotation.reflex;
 
-import com.ldq.study.annotation.entity.ConstrPerson;
-import com.ldq.study.annotation.entity.Gender;
+import com.ldq.study.reflexAndAnnotation.entity.ConstrPerson;
+import com.ldq.study.reflexAndAnnotation.entity.Gender;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
