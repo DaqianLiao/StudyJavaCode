@@ -13,8 +13,7 @@ public class NotInitMain {
 //        subClassUseSuperClassStaticField();
 //        defineSuperClassArray();
 //        defineSubClassArray();
-//        constClassFinalField();
-        staticMethod();
+        constClassFinalField();
     }
 
     /**
@@ -68,11 +67,5 @@ public class NotInitMain {
         System.out.println(ConstClass.HELLOWORLD);
     }
 
-    /**
-     * 调用类的静态方法，会加载类的静态代码块
-     * 但是不会执行类的构造函数初始化
-     */
-    public static void staticMethod(){
-        SuperClass.staticMethod();
-    }
+
 }

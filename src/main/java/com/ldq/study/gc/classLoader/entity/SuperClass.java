@@ -16,6 +16,8 @@ public class SuperClass {
      */
     static {
         System.out.println("SuperClass static code init!");
+        System.out.println("VALUE = " + VALUE);
+        System.out.println("FINAL_VALUE = " + FINAL_VALUE);
     }
 
     public SuperClass() {
