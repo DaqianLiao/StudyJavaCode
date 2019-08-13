@@ -1,12 +1,11 @@
 package com.ldq.study.finalDemo;
-
 /**
  * final修饰变量会指向一块固定的内存，这个内存中的值不允许改变
  * final修饰的常量，在编译阶段会放到常量池中
  * final修饰方法，主要是锁住父类方法，不允许任何继承类对该方法进行修改，参考模版模式中的模版方法
  * final修饰类，表明该类不能被继承，参考String类
  */
-public class Main {
+public class FinalMain {
     public static void testPerson(){
         Person p = new Person("Lily","girl",25);
         System.out.println("p = " +p);
