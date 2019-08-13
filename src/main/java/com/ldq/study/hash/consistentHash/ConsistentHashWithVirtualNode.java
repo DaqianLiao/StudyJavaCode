@@ -1,4 +1,4 @@
-package com.ldq.study.hash;
+package com.ldq.study.hash.consistentHash;
 
 import java.util.ArrayList;
 import java.util.Collections;
