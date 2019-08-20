@@ -1,4 +1,4 @@
-package com.ldq.study.io.nio;
+package com.ldq.study.io.nio.wechat;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

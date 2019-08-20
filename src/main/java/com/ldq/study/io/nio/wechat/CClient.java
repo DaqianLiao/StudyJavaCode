@@ -1,12 +1,11 @@
-package com.ldq.study.io.nio;
-
+package com.ldq.study.io.nio.wechat;
 import java.io.IOException;
 
-public class AClient {
+public class CClient {
 
     public static void main(String[] args)
             throws IOException {
-        new NioClient().start("AClient");
+        new NioClient().start("CClient");
     }
 
 }
