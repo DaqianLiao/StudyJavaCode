@@ -1,4 +1,4 @@
-package com.ldq.study.io;
+package com.ldq.study.io.readProperties;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
