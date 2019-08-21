@@ -1,21 +1,22 @@
 package com.ldq.study.io.nio.mmap;
 
-import sun.rmi.runtime.Log;
+import org.junit.Test;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.CharBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class MmapCase {
-    public static void main(String[] args) throws IOException {
-        String fileName = "mmap.txt";
-        ClassLoader classLoader = MmapCase.class.getClassLoader();
-        Path path = Paths.get(classLoader.getResource(fileName).getPath());
-//        FileChannel fileChannel = FileChannel.open(path);
+
+    @Test
+    public void readWithNio() throws IOException {
+        Path path = Paths.get("data/mmap/readMmapFile.txt");
         /**
          * mode 为文件映射模式，分为三种：
          *
@@ -28,11 +29,75 @@ public class MmapCase {
          */
         CharBuffer charBuffer = null;
         try (FileChannel fileChannel = FileChannel.open(path)) {
-            MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_ONLY, 0, fileChannel.size());
+            MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_ONLY,
+                    0, fileChannel.size());
             if (mappedByteBuffer != null) {
                 charBuffer = Charset.forName("UTF-8").decode(mappedByteBuffer);
             }
             System.out.println(charBuffer.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Test
+    //普通输入流
+    public void readWithInputStream() {
+        Path path = Paths.get("data/mmap/readMmapFile.txt");
+        InputStream in;
+
+        try (InputStream is = Files.newInputStream(path);
+             InputStreamReader reader = new InputStreamReader(is)) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                System.out.print(((char) (c)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    //带缓冲的输入流
+    public void readWithBufferedInputStream() {
+        Path path = Paths.get("data/mmap/readMmapFile.txt");
+
+        try (InputStream is = new BufferedInputStream(Files.newInputStream(path));
+             InputStreamReader reader = new InputStreamReader(is)) {
+            int c;
+            while ((c = reader.read()) != -1) {
+                System.out.print(((char) (c)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    //随机访问文件
+    public void readWithRandomAccessFile() {
+        Path path = Paths.get("data/mmap/readMmapFile.txt");
+        try (RandomAccessFile randomAccessFile = new RandomAccessFile(path.toFile(), "r")) {
+            for (long i = 0; i < randomAccessFile.length(); i++) {
+                randomAccessFile.seek(i);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void writeFile() throws IOException {
+        String str = "沉默王二，《Web全栈开发进阶之路》作者";
+        CharBuffer charBuffer = CharBuffer.wrap(str);
+        Path path = Paths.get("data/mmap/writeMmapFile.txt");
+        try (FileChannel fileChannel = FileChannel.open(path, StandardOpenOption.READ, StandardOpenOption.WRITE,
+                StandardOpenOption.TRUNCATE_EXISTING)) {
+            MappedByteBuffer mappedByteBuffer = fileChannel.map(FileChannel.MapMode.READ_WRITE, 0, 128);
+            if (mappedByteBuffer != null) {
+                mappedByteBuffer.put(Charset.forName("UTF-8").encode(charBuffer));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
