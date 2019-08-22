@@ -14,12 +14,15 @@ public class CBCase6 {
     public static CyclicBarrier cyclicBarrier = new CyclicBarrier(10);
     //规则是否已重建
     public static boolean guizhe = false;
+
     public static class T extends Thread {
         int sleep;
+
         public T(String name, int sleep) {
             super(name);
             this.sleep = sleep;
         }
+
         @Override
         public void run() {
             long starTime = 0, endTime = 0;
@@ -49,6 +52,7 @@ public class CBCase6 {
             System.out.println(this.getName() + ",sleep:" + this.sleep + " 等待了" + (endTime - starTime) + "(ms),开始吃饭了！");
         }
     }
+
     public static void main(String[] args) throws InterruptedException {
         for (int i = 1; i <= 10; i++) {
             T t = new T("员工" + i, i);

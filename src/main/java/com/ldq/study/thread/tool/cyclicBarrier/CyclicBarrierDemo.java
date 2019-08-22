@@ -4,7 +4,7 @@ import java.util.concurrent.CyclicBarrier;
 
 public class CyclicBarrierDemo {
 
-    public static void threadDemo1(){
+    public static void threadDemo1() {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(2);
 
         Thread thread1 = new Thread(() -> {
@@ -43,7 +43,7 @@ public class CyclicBarrierDemo {
 
     }
 
-    public static void runnableDemo(){
+    public static void runnableDemo() {
         CyclicBarrier cyclicBarrier = new CyclicBarrier(2,
                 () -> System.out.println("stop thread = " + Thread.currentThread().getName()));
 
@@ -54,7 +54,7 @@ public class CyclicBarrierDemo {
                     System.out.println("working thread name = " + Thread.currentThread().getName());
                     Thread.sleep(1000);
                 }
-                    cyclicBarrier.await();
+                cyclicBarrier.await();
 
                 System.out.println("waiting another thread");
             } catch (Exception ex) {
@@ -71,7 +71,7 @@ public class CyclicBarrierDemo {
                     System.out.println("working thread name = " + Thread.currentThread().getName());
                     Thread.sleep(1000);
                 }
-                    cyclicBarrier.await();
+                cyclicBarrier.await();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -88,18 +88,18 @@ public class CyclicBarrierDemo {
         threadDemo1();
         runnableDemo();
 
-/*
-*  阻塞子线程
-* 计数器剋使用reset方法
-* 可以循环使用
-*
-* 构造方法有两个，
-*
-* runnable类型，目的是当现成的拦截数量与构造方法的参数相同时，
-* 有限执行构造方法里的任务，然后在执行每个线程中await方法后面的代码
-*
-*
-* */
+        /*
+         *  阻塞子线程
+         * 计数器剋使用reset方法
+         * 可以循环使用
+         *
+         * 构造方法有两个，
+         *
+         * runnable类型，目的是当现成的拦截数量与构造方法的参数相同时，
+         * 有限执行构造方法里的任务，然后在执行每个线程中await方法后面的代码
+         *
+         *
+         * */
 
     }
 }
