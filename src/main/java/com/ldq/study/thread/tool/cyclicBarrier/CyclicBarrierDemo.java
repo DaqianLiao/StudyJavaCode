@@ -1,4 +1,4 @@
-package com.ldq.study.thread.tool;
+package com.ldq.study.thread.tool.cyclicBarrier;
 
 import java.util.concurrent.CyclicBarrier;
 
