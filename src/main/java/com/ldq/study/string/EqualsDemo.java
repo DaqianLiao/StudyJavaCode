@@ -1,4 +1,4 @@
-package com.ldq.study.StringDemo;
+package com.ldq.study.string;
 
 public class EqualsDemo {
 
