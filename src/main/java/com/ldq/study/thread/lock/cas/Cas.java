@@ -1,4 +1,4 @@
-package com.ldq.study.thread.lock;
+package com.ldq.study.thread.lock.cas;
 
 /**
  * CAS(Compare And Set)算法是硬件对于并发操作的支持，是一种无锁的非阻塞算法的实现。
@@ -12,7 +12,7 @@ public class Cas {
     public static void main(String[] args) {
         final CompareAndSwap cas = new CompareAndSwap();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
             new Thread(() -> {
                 int expectedValue = cas.get();
                 System.out.println(Thread.currentThread().getName() + " inner value = " + expectedValue);
