@@ -1,6 +1,6 @@
 package com.ldq.study.algorithm.find.graph;
 
-public class Main {
+public class GraphMain {
     public static void main(String args[]) {
         int n = 8, e = 9;//分别代表结点个数和边的数目
         String labels[] = {"1", "2", "3", "4", "5", "6", "7", "8"};//结点的标识
