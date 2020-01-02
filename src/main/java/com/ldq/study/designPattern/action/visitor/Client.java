@@ -9,7 +9,7 @@ package com.ldq.study.designPattern.action.visitor;
  *      具体元素变更困难
  *      违反依赖倒置原则，依赖了具体类
  */
-public class Main {
+public class Client {
     private static void testVisit() {
         //被访问者对象
         Computer computer = new Computer();

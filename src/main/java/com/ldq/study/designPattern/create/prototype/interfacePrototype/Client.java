@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.create.prototype.interfacePrototype;
 
-public class Main {
+public class Client {
     /**
      * 实现了浅克隆方式
      */

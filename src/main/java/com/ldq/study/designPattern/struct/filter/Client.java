@@ -7,7 +7,7 @@ import java.util.List;
  * 过滤器模式
  * 根据自己定义的规则，进行过滤
  */
-public class Main {
+public class Client {
 
     private static void testFilter() {
         List<Person> personList = new ArrayList<>();

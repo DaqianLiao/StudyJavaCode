@@ -7,7 +7,7 @@ import java.util.Random;
  * 通过共享技术支持大量细粒度的对象，解决了创建大量对象可能导致内存溢出
  * 对象可以根据特定的属性区分：：
  */
-public class Main {
+public class Client {
 
     private static void testFlyWeight() {
         String[] colors = {"green","red","blue","yellow","black","white","gray"};

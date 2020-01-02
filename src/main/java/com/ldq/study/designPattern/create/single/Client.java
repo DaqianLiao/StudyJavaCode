@@ -3,7 +3,7 @@ package com.ldq.study.designPattern.create.single;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Main {
+public class Client {
     public static void testHungry() {
         HungrySingle h1 = HungrySingle.getInstance();
         HungrySingle h2 = HungrySingle.getInstance();

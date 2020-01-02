@@ -12,7 +12,7 @@ package com.ldq.study.designPattern.struct.adapter;
  *
  *
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
         AudioPlay audioPlay = new AudioPlay();
         audioPlay.play("mp3", "beyond.mp3");

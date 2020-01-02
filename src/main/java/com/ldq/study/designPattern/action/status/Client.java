@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.action.status;
 
-public class Main {
+public class Client {
 
     private static void testState() {
 

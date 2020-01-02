@@ -4,7 +4,7 @@ import com.ldq.study.designPattern.action.strategy.impl.AddStrategyImpl;
 import com.ldq.study.designPattern.action.strategy.impl.MultiplyStrategyImpl;
 import com.ldq.study.designPattern.action.strategy.impl.SubstractStrategyImpl;
 
-public class Main {
+public class Client {
     public static void main(String[] args) {
         StrategyPattern pattern;
         pattern = new StrategyPattern(new AddStrategyImpl());

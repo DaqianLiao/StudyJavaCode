@@ -8,7 +8,7 @@ package com.ldq.study.designPattern.action.command;
  * 缺点：实现具体的命令系统，需要创建大量命令对象
  *
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
         Receiver receiver = new Receiver();
         OnCmdImpl on = new OnCmdImpl(receiver);

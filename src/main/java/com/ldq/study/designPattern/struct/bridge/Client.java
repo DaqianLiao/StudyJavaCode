@@ -7,7 +7,7 @@ package com.ldq.study.designPattern.struct.bridge;
  * 实际上就是桥接了抽象类和接口
  * 对客户端透明，提高了扩展性
  */
-public class Main {
+public class Client {
 
     private static void testBridge() {
         Shape c1 = new CircleShapeImpl(new RedBasedDrawImpl(),10,100,100);

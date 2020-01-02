@@ -1,7 +1,7 @@
 package com.ldq.study.designPattern.create.abstructFactory;
 
 
-public class Main {
+public class Client {
 
     public static void normal() {
         PCFactory dellFactory = FactoryProducer.createFactory("dell");

@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.struct.proxy.staticProxy;
 
-public class Main {
+public class Client {
 
     public static void main(String[] args) {
         System.out.println("自己买房的过程");

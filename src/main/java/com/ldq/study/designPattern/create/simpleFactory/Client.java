@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.create.simpleFactory;
 
-public class Main {
+public class Client {
 
     public static void main(String[] args) throws Exception {
         Operation add = OpertaionSimpleFac.createOperation("+");

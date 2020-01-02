@@ -5,7 +5,7 @@ import com.ldq.study.designPattern.struct.proxy.staticProxy.BuyHouseImpl;
 
 import java.lang.reflect.Proxy;
 
-public class Main {
+public class Client {
     public static void main(String[] args) {
 
         BuyHouse buyHouse = new BuyHouseImpl();

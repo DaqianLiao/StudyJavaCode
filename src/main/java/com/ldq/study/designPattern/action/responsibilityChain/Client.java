@@ -2,7 +2,7 @@ package com.ldq.study.designPattern.action.responsibilityChain;
 
 import java.util.Random;
 
-public class Main {
+public class Client {
     public static void main(String[] args) {
         Handler saler = HandlerFactory.createHandler();
 

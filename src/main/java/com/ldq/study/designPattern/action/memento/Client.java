@@ -3,7 +3,7 @@ package com.ldq.study.designPattern.action.memento;
 /**
  * 通过将状态持久化到外部，提供回滚功能
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
         CareTaker taker = new CareTaker();
         Game game = new Game();

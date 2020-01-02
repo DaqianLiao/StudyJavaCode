@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.create.normalFactory;
 
-public class Main {
+public class Client {
     public static void main(String[] args) throws Exception {
 
         Factory addFac = (Factory) Class.forName("com.ldq.study.designPattern.create.normalFactory.AddFactory").newInstance();

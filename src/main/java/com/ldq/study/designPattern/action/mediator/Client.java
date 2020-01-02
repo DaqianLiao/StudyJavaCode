@@ -4,7 +4,7 @@ package com.ldq.study.designPattern.action.mediator;
  * 中介模式：
  *
  */
-public class Main {
+public class Client {
     public static void main(String[] args) {
         CurtainSmartDeviceImpl csd = new CurtainSmartDeviceImpl();
         MusicSmartDeviceImpl msd = new MusicSmartDeviceImpl();

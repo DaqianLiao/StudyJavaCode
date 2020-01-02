@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.struct.decorator;
 
-public class Main {
+public class Client {
     public static void main(String[] args) {
         Component component = new ConcreteComponent();
         ConcreteDecorator concreteDecorator = new ConcreteDecorator(component);

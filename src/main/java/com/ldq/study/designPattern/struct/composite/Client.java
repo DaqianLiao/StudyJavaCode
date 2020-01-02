@@ -8,7 +8,7 @@ import java.io.File;
  * 场景：表达对象的层级结构的时候
  *
  */
-public class Main {
+public class Client {
 
     /**
      * 递归创建树状目录层级结构

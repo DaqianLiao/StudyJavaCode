@@ -1,6 +1,6 @@
 package com.ldq.study.designPattern.create.builder;
 
-public class Main {
+public class Client {
 
     public static void testClassBuilder() {
         Person person = new Person.Builder(1, "jack")

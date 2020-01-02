@@ -9,7 +9,7 @@ package com.ldq.study.designPattern.struct.facade;
  *
  *
  */
-public class Main {
+public class Client {
     public static void testFacade() {
         ShapeMaker shapeMaker = new ShapeMaker();
         shapeMaker.drawCircle();
