@@ -89,7 +89,7 @@ public class Client {
             new Thread(() ->
             {
                 String name = Thread.currentThread().getName();
-                CheckLockObjectLazySingle h = CheckLockObjectLazySingle.getInstance();
+                DoubleCheckSingle h = DoubleCheckSingle.getInstance();
                 System.out.println(name + " create single = " + h);
             }, "thread_" + i)
                     .start();
@@ -147,12 +147,12 @@ public class Client {
 //        testUnsafeLazy();
 //        testSafeLazy();
 //        testLockObject();
-//        testCheckLockObject();
+        testCheckLockObject();
 //        testDoubleCheck();
 //        testStaticInner();
 //        testCasSingleThread();
 
-     testMultiThreadCasSingle();
+//     testMultiThreadCasSingle();
     }
 
 }

@@ -26,7 +26,6 @@ public class CasSingle {
             /**
              * 重要缺点
              * 当有多个线程同时执行到这一步，会在堆内存中创建很多个对象
-             *
              */
             casSingle = new CasSingle();
 
