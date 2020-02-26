@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 
 public class ModifyName {
     public static void main(String[] args) {
-        String path = "/Users/diligent_leo/Desktop/Flume-徐培成";
+        String path = "/Volumes/Passport/movies/电视剧/暹罗密码";
         File file = new File(path);
         List<File> files = getFiles(file);
         files.forEach(System.out::println);
-        filter(files,"大数据教育_徐培成_");
+//        filter(files,"异域档案之暹罗密码");
     }
 
     public static List<File> getFiles(File file){

@@ -11,7 +11,7 @@ public class SemaphoreDemo {
     //设置许可证的最大数量，也就意味着同时允许N个线程执行
     private static final Semaphore semaphore = new Semaphore(3);
     private static final ThreadPoolExecutor threadPool =
-            new ThreadPoolExecutor(5, 10,
+            new ThreadPoolExecutor(8, 10,
                     60, TimeUnit.SECONDS, new LinkedBlockingQueue<>());
 
     private static class InformationThread extends Thread {
@@ -32,6 +32,8 @@ public class SemaphoreDemo {
             try {
                 //获取许可证
                 semaphore.acquire();
+//                boolean success = semaphore.tryAcquire(1,TimeUnit.SECONDS);
+//                System.out.println("success = " + success);
                 System.out.println(Thread.currentThread().getName() + ":大家好，我是" + name + "我今年" + age + "岁当前时间为：" + System.currentTimeMillis());
                 Thread.sleep(new Random().nextInt(100) * 100);
                 System.out.println(name + "要准备释放许可证了，当前时间为：" + System.currentTimeMillis());
@@ -69,6 +71,10 @@ public class SemaphoreDemo {
     public static void main(String[] args) {
         String[] name = {"李明", "王五", "张杰", "王强", "赵二", "李四", "张三"};
         int[] age = {26, 27, 33, 45, 19, 23, 41};
+        for (int i = 0; i < name.length; i++) {
+            Thread t1 = new InformationThread(name[i], age[i]);
+            threadPool.execute(t1);
+        }
         for (int i = 0; i < name.length; i++) {
             Thread t1 = new InformationThread(name[i], age[i]);
             threadPool.execute(t1);
