@@ -217,7 +217,11 @@ public class CompletableFutureDemo {
         whenCompleteAsync();
         System.out.println("___________________");
         thenApply();
-        thenApplyWithException();
+        try {
+            thenApplyWithException();
+        }catch (Exception e){
+            System.out.println(e);
+        }
         System.out.println("___________________");
         handle();
         System.out.println("___________________");
