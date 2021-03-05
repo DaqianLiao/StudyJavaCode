@@ -1,8 +1,5 @@
 package com.ldq.study.rpc.rpc6;
 
-import com.ldq.study.rpc.common.User;
-import com.ldq.study.rpc.common.UserService;
-
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.ServerSocket;
@@ -33,6 +30,7 @@ public class Server {
         ObjectInputStream dis = new ObjectInputStream(in);
         ObjectOutputStream oos = new ObjectOutputStream(out);
 
+//        读取UTF8格式字符串，实际上是根据协议来解析
         String className = dis.readUTF();
         String methodName = dis.readUTF();
         Class[] parameterTypes = (Class[]) dis.readObject();
@@ -45,6 +43,13 @@ public class Server {
 
         System.out.println(aClass.getName());
         Method method = aClass.getMethod(methodName, parameterTypes);
+        Class<?> returnType = method.getReturnType();
+        System.out.println("returnType.getName() = " + returnType.getName());
+//        Method newInstMethod = returnType.getMethod("getDefaultInstance");
+//        System.out.println("newInstMethod = " + newInstMethod.getName());
+        System.out.println("method = " + method.getName());
+
+//        method.getReturnType().getMethod("getDefault")
 //        实例化该类的对象，对象必须具有无参构造器，
 //        才可以直接实例化，否则会抛出java.lang.InstantiationException异常
         Object o = method.invoke(aClass.newInstance(), args);
