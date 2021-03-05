@@ -5,6 +5,7 @@ package com.ldq.study.algorithm.find.base;
  */
 public class BinaryExtendFind {
     static int[] array = {1, 1, 1, 2, 4, 5, 5, 6, 8, 8};
+    static int[] index = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     /**
      * 查找第一个=key的数
@@ -23,12 +24,16 @@ public class BinaryExtendFind {
         int right = array.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >>> 1);
+            System.out.print("left = " + left);
+            System.out.print("\t mid = " + mid);
+            System.out.println("\t right = " + right);
             //Key Condition
             if (array[mid] >= key) {
                 right = mid - 1;
             } else {
                 left = mid + 1;
             }
+
         }
         /**
          * condition1 && Condition2
@@ -61,6 +66,9 @@ public class BinaryExtendFind {
         int right = array.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >>> 1);
+            System.out.print("left = " + left);
+            System.out.print("\t mid = " + mid);
+            System.out.println("\t right = " + right);
             //Key Condition
             if (array[mid] <= key) {
                 left = mid + 1;
@@ -87,6 +95,9 @@ public class BinaryExtendFind {
         int right = array.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >>> 1);
+            System.out.print("left = " + left);
+            System.out.print("\t mid = " + mid);
+            System.out.println("\t right = " + right);
             //Key Condition
             if (array[mid] > key) {
                 right = mid - 1;
@@ -119,6 +130,9 @@ public class BinaryExtendFind {
         int right = array.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >>> 1);
+            System.out.print("left = " + left);
+            System.out.print("\t mid = " + mid);
+            System.out.println("\t right = " + right);
             //Key Condition
             if (array[mid] >= key) {
                 right = mid - 1;
@@ -151,6 +165,9 @@ public class BinaryExtendFind {
         int right = array.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >>> 1);
+            System.out.print("left = " + left);
+            System.out.print("\t mid = " + mid);
+            System.out.println("\t right = " + right);
             //Key Condition
             if (array[mid] < key) {
                 left = mid + 1;
@@ -176,6 +193,9 @@ public class BinaryExtendFind {
         int right = array.length - 1;
         while (left <= right) {
             int mid = left + ((right - left) >>> 1);
+            System.out.print("left = " + left);
+            System.out.print("\t mid = " + mid);
+            System.out.println("\t right = " + right);
             //Key Condition
             if (array[mid] <= key) {
                 left = mid + 1;
@@ -191,27 +211,27 @@ public class BinaryExtendFind {
 
     public static void main(String[] args) {
         System.out.println("array length = " + array.length);
-        System.out.println("index = " + findFirstEqual(array, 1));
-        System.out.println("index = " + findFirstEqual(array, 5));
-        System.out.println("index = " + findFirstEqual(array, 8));
-        System.out.println("index = " + findFirstEqual(array, 10));
-
-
-        System.out.println("index = " + findLastEqual(array, 1));
-        System.out.println("index = " + findFirstEqualLarger(array, 0));
-        System.out.println("index = " + findFirstEqualLarger(array, 10));
-
-        System.out.println("index = " + findFirstLarger(array, 4));
-        System.out.println("index = " + findFirstLarger(array, 8));
-
-
-        System.out.println("index = " + findFirstSmall(array, 10));
-        System.out.println("index = " + findFirstSmall(array, 8));
-
-        System.out.println("index = " + findFirstEqualSmall(array, 10));
-        System.out.println("index = " + findFirstEqualSmall(array, 8));
-        System.out.println("index = " + findFirstEqualSmall(array, 3));
-        System.out.println("index = " + findFirstEqualSmall(array, 0));
+//        System.out.println("index = " + findFirstEqual(array, 1));
+//        System.out.println("index = " + findFirstEqual(array, 5));
+//        System.out.println("index = " + findFirstEqual(array, 8));
+//        System.out.println("index = " + findFirstEqual(array, 10));
+//
+//
+//        System.out.println("index = " + findLastEqual(array, 1));
+        System.out.println("index = " + findFirstEqualLarger(array, 6));
+//        System.out.println("index = " + findFirstEqualLarger(array, 10));
+//
+//        System.out.println("index = " + findFirstLarger(array, 4));
+//        System.out.println("index = " + findFirstLarger(array, 8));
+//
+//
+//        System.out.println("index = " + findFirstSmall(array, 10));
+//        System.out.println("index = " + findFirstSmall(array, 8));
+//
+//        System.out.println("index = " + findFirstEqualSmall(array, 10));
+//        System.out.println("index = " + findFirstEqualSmall(array, 8));
+//        System.out.println("index = " + findFirstEqualSmall(array, 3));
+//        System.out.println("index = " + findFirstEqualSmall(array, 0));
 
 
     }

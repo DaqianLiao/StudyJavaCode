@@ -1,5 +1,7 @@
 package com.ldq.study.algorithm.stackDemo;
 
+import java.util.Stack;
+
 public class Stack2Queue {
 
     /**
@@ -7,6 +9,9 @@ public class Stack2Queue {
      * 
      */
     public static void solution(){
-        
+        Stack<Integer> pop = new Stack<Integer>();
+        Stack<Integer> push = new Stack<Integer>();
+
+
     }
 }

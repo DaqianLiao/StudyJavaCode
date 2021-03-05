@@ -23,6 +23,7 @@ public class SelectSort {
                 }
             }
             if (index > i) {
+                System.out.println("need change: " + "a1 = " + arrays[i] + ", a2 = " + arrays[index]);
                 temp = arrays[i];
                 arrays[i] = arrays[index];
                 arrays[index] = temp;
@@ -35,7 +36,7 @@ public class SelectSort {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{8, 1, 2, 3, 4, 5, 6, 7, 0};
+        int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 0};
         selectSort(nums);
     }
 }

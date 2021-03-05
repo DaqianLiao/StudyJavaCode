@@ -1,4 +1,4 @@
-package com.ldq.study.algorithm.cache;
+package com.ldq.study.algorithm.cache.lru;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

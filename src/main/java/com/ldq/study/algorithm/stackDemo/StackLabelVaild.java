@@ -16,6 +16,8 @@ public class StackLabelVaild {
         char[] chars = str.toCharArray();
 
         for (char aChar : chars) {
+            System.out.println("aChar = " + aChar);
+//            如果栈为空，则直接添加
             if (stack.size() == 0) {
                 stack.push(aChar);
             } else if (isSym(stack.peek(), aChar)) {

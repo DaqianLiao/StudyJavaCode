@@ -12,6 +12,7 @@ import java.util.Arrays;
  * 平均情况：O(nlogn)
  */
 public class QuickSort {
+
     public static void sort(int[] arrays, int left, int right) {
         if (left > right) {
             return;
