@@ -63,7 +63,7 @@ public class StartAndRun {
 
     public static void main(String[] args) {
         //每次运行其中一个
-//       start();
-       run();
+       start();
+//       run();
     }
 }

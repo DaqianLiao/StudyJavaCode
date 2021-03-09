@@ -16,8 +16,8 @@ public class volatileThread {
         public void run() {
 
             while (index < maxInt) {
-                System.out.println(Thread.currentThread().getName() +
-                        " is ready to run! now flag = " + flag + ", index = " + index);
+//                System.out.println(Thread.currentThread().getName() +
+//                        " is ready to run! now flag = " + flag + ", index = " + index);
                 if (flag) {
                     System.out.println(Thread.currentThread().getName() + " is print:" + index++);
                     flag = false;
@@ -30,8 +30,8 @@ public class volatileThread {
         @Override
         public void run() {
             while (index < maxInt) {
-                System.out.println(Thread.currentThread().getName() +
-                        " is ready to run! now flag = " + flag + ", index = " + index);
+//                System.out.println(Thread.currentThread().getName() +
+//                        " is ready to run! now flag = " + flag + ", index = " + index);
 
                 if (!flag) {
                     System.out.println(Thread.currentThread().getName() + " is print: " + index++);

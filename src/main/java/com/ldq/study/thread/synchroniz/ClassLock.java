@@ -9,7 +9,7 @@ public class ClassLock implements Runnable {
          * 类锁的同步代码块
          */
       synchronized (ClassLock.class) {
-            System.out.println(Thread.currentThread().getName() + " 获得SyncThread3.class lock，" +
+            System.out.println(Thread.currentThread().getName() + " 获得 ClassLock.class lock，" +
                     " now = " + System.currentTimeMillis());
             try {
                 Thread.sleep(3000);
