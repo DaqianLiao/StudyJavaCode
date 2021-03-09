@@ -7,11 +7,18 @@ import java.util.stream.Collectors;
 
 public class ModifyName {
     public static void main(String[] args) {
-        String path = "/Volumes/Passport/movies/电视剧/暹罗密码";
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("os.arch"));
+        String path = "/Users/diligent_leo/Desktop/09 JAVA开发中的热点技术剖析";
+        showFiles(path);
+        filter(path,"[52download.cn]");
+        showFiles(path);
+    }
+
+    public static void showFiles(String path){
         File file = new File(path);
         List<File> files = getFiles(file);
         files.forEach(System.out::println);
-//        filter(files,"异域档案之暹罗密码");
     }
 
     public static List<File> getFiles(File file){
@@ -27,7 +34,9 @@ public class ModifyName {
         return files;
     }
 
-    public static void filter(List<File> files,String filter){
+    public static void filter(String path,String filter){
+        File file = new File(path);
+        List<File> files = getFiles(file);
         files.stream()
                 .filter(x -> x.getAbsolutePath().contains(filter))
                 .forEach(x -> x.renameTo(new File(x.getAbsolutePath().replace(filter, ""))));

@@ -1,4 +1,4 @@
-package com.ldq.study.pool;
+package com.ldq.study.pool.connPool;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

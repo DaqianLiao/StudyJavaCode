@@ -1,7 +1,5 @@
 package com.ldq.study.annotation.table;
 
-
-
 /**
  * Created by diligent_leo on 2016/12/24.
  */

@@ -1,13 +1,14 @@
-package com.ldq.study.serializable;
+package com.ldq.study.unsafe;
 
-import java.io.Serializable;
-
-public class ZhangSan implements Serializable {
-    //通过判断类的serialVersionUID来验证的版本一致的
-    private static final long serialVersionUID = 12L;
+public class Player {
     private String name;
+
     private int age;
 
+    public Player(String name,int age){
+        this.age=age;
+        this.name = name;
+    }
     public String getName() {
         return name;
     }
@@ -26,7 +27,7 @@ public class ZhangSan implements Serializable {
 
     @Override
     public String toString() {
-        return "ZhangSan{" +
+        return "Player{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';

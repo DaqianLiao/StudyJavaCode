@@ -1,11 +1,14 @@
 package com.ldq.study.intEquals;
 
 //-XX:AutoBoxCacheMax = 150
+// -ea 开启断言判断
 public class IntegerEquals {
 
     public static void main(String[] args) {
         Integer n1 = 123;
         Integer n2 = 123;
+
+        assert n2==0;
 
         Integer n5 = 150;
 //        Integer n6 = 150;

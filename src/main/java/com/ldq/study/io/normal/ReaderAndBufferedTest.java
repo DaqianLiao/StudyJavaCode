@@ -36,4 +36,14 @@ public class ReaderAndBufferedTest {
         }
         System.out.println("/n文件已复制");
     }
+
+    public static void read() throws FileNotFoundException {
+        File fileDir=new File("data/io");
+        System.out.println(fileDir.mkdirs());
+        FileReader in=new FileReader("data/io/demo.txt");
+
+        BufferedReader br=new BufferedReader(in);
+
+
+    }
 }

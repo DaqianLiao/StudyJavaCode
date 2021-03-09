@@ -53,7 +53,7 @@ public class Main {
         readObject(path);
         //修改了原始Person数据
         //由于age是静态变量，属于类的状态，当对象反序列化的时候，
-        // 由类加载器加载静态变量的值，所有反序列化对象会加载静态值
+        //由类加载器加载静态变量的值，所有反序列化对象会加载静态值
         person.setAge(10);
         //修改名字属性，对序列化后的对象无影响
         person.setName("modify");

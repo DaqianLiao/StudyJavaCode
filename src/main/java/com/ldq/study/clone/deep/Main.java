@@ -1,6 +1,8 @@
 package com.ldq.study.clone.deep;
 
 
+import org.junit.Test;
+
 /**
  * 深克隆不仅复制所有普通的成员变量的值，
  * 其他引用对象也会被复制
@@ -9,7 +11,8 @@ package com.ldq.study.clone.deep;
  * 2/需要重写引用类型clone方法，并申明为public类型
  */
 public class Main {
-    public static void testClone() {
+    @Test
+    public void testClone() {
         Address address = new Address("China", "guangdong", "shenzhen");
         Customer c1 = new Customer("Lily", address);
         Customer c2 = c1.clone();
@@ -28,7 +31,8 @@ public class Main {
         System.out.println(c2.toString());
     }
 
-    public static void testSerialize() throws Exception {
+    @Test
+    public void testSerialize() throws Exception {
         AddressSerial address = new AddressSerial("China", "guangdong", "shenzhen");
         CustomerSerial c1 = new CustomerSerial("Lily", address);
         CustomerSerial c2 = c1.deepclone();
@@ -45,12 +49,5 @@ public class Main {
         c2.getAddress().setCity("guangzhou");
         System.out.println(c1.toString());
         System.out.println(c2.toString());
-    }
-
-    public static void main(String[] args) throws Exception {
-
-        testClone();
-        System.out.println("deep clone by serializable");
-        testSerialize();
     }
 }
